@@ -15,3 +15,7 @@ def test_selection_list(blank_list_dict):
 def test_sort_and_choice_list(date_list):
     assert utils.sort_and_choice_list(date_list)[0]['date'] == 252
     assert len(utils.sort_and_choice_list(date_list)) == 5
+
+
+def test_date_transformation(date_format):
+    assert utils.date_transformation(date_format) == '26.08.2019'
