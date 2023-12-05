@@ -19,3 +19,10 @@ def selection_list(list_dict):
         elif item['state'] == 'EXECUTED':
             result_list.append(item)
     return result_list
+
+
+def sort_and_choice_list(list_dict):
+    """Сортирует входящий список по дате, и возврвщает 5 самых 'свежих' элементов"""
+
+    sorted_list = sorted(list_dict, key=lambda item: item['date'], reverse=True)
+    return sorted_list[0: 5]
