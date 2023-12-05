@@ -35,3 +35,14 @@ def date_transformation(date):
     stage_2 = stage_1.split("-")
     total_stage = ".".join(stage_2[::-1])
     return total_stage
+
+
+def account_number_transformation(num):
+    """Преобразует номер счета(карты) в упрощенный"""
+
+    if num == "Внесение наличных средств":
+        return num
+    elif "Счет" in num:
+        return f"Счет **{num[-4:]}"
+    else:
+        return f"{num[:-16]}{num[-16:-12]} {num[-12:-10]}** **** {num[-4:]}"
