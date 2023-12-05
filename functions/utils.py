@@ -46,3 +46,17 @@ def account_number_transformation(num):
         return f"Счет **{num[-4:]}"
     else:
         return f"{num[:-16]}{num[-16:-12]} {num[-12:-10]}** **** {num[-4:]}"
+
+
+def output_result(list_dict):
+    """Выводит результат работы проекта в заданном формате"""
+
+    for item in list_dict:
+        if 'from' in item:
+            print(f"{date_transformation(item['date'])} {item['description']}\n" \
+                  f"{account_number_transformation(item['from'])} -> {account_number_transformation(item['to'])}\n" \
+                  f"{item['operationAmount']['amount']} {item['operationAmount']['currency']['name']}\n")
+        else:
+            print(f"{date_transformation(item['date'])} {item['description']}\n" \
+                  f"Внесение наличных средств -> {account_number_transformation(item['to'])}\n" \
+                  f"{item['operationAmount']['amount']} {item['operationAmount']['currency']['name']}\n")
