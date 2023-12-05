@@ -19,3 +19,9 @@ def test_sort_and_choice_list(date_list):
 
 def test_date_transformation(date_format):
     assert utils.date_transformation(date_format) == '26.08.2019'
+
+
+def test_account_number_transformation(account_number):
+    assert utils.account_number_transformation(account_number[0])[-5] == ' '
+    assert utils.account_number_transformation(account_number[1]) == "Внесение наличных средств"
+    assert utils.account_number_transformation(account_number[2])[:4] == 'Счет'

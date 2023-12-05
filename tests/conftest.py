@@ -22,3 +22,8 @@ def date_list():
 @pytest.fixture()
 def date_format():
     return "2019-08-26T10:50:58.294041"
+
+
+@pytest.fixture()
+def account_number():
+    return ["MasterCard 7158300734726758", "Внесение наличных средств", "Счет 64686473678894779589"]
