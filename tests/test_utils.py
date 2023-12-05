@@ -10,3 +10,8 @@ def test_load_data(start_list):
 
 def test_selection_list(blank_list_dict):
     assert len(utils.selection_list(blank_list_dict)) == 1
+
+
+def test_sort_and_choice_list(date_list):
+    assert utils.sort_and_choice_list(date_list)[0]['date'] == 252
+    assert len(utils.sort_and_choice_list(date_list)) == 5

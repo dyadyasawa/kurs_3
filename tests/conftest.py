@@ -12,3 +12,8 @@ def start_list():
 @pytest.fixture()
 def blank_list_dict():
     return [{}, {'state': 'CANCELED', 'name': 'noname'}, {'state': 'EXECUTED'}]
+
+
+@pytest.fixture()
+def date_list():
+    return [{'date': 26}, {'date': 11}, {'date': 74}, {'date': 5}, {'date': 252}, {'date': 0}, {'date': 1}]
