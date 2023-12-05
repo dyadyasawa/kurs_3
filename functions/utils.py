@@ -26,3 +26,12 @@ def sort_and_choice_list(list_dict):
 
     sorted_list = sorted(list_dict, key=lambda item: item['date'], reverse=True)
     return sorted_list[0: 5]
+
+
+def date_transformation(date):
+    """Преобразует дату из входящего формата в формат дд.мм.гггг"""
+
+    stage_1 = date.split("T")[0]
+    stage_2 = stage_1.split("-")
+    total_stage = ".".join(stage_2[::-1])
+    return total_stage
